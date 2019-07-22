@@ -2,26 +2,28 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 
 export default class UserAPI extends RESTDataSource {
     
-    constructor(){
+    constructor() {
         super();
-        this.baseUrl = "http://localhost:8080/api"
+        this.baseURL = "http://localhost:9090/api/"
     }
 
     async getAllUser() {
-       const users = await this.get("users",null, this.context.customHeaders);
+       const users = await this.get("user/",null, this.context.customHeaders);
         Array.isArray(users) ? 
         users.map( user => this.userReducer(user)) : [];
+        
     }
 
     async userById({ userId }) {
-        const user = await this.get("userById", {userId : userId});
+        const user = await this.get(`user/getuserbyid/${userId}`, null, this.context.customHeaders);
         return this.userReducer(user);
     }
+    
 
     userReducer(user) {
         return {
-            id: user.id || 0,
-            name : user.name
+            id: user.userId || 0,
+            name : user.userDetails.firstName
         }
     }
 }

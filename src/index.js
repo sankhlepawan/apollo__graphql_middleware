@@ -14,8 +14,7 @@ const server = new ApolloServer(
             typeDefs,
             resolvers
         }),
-        debug: true,
-    }
+     }
 );
 
 

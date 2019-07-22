@@ -1,13 +1,12 @@
 
-import filterHeaders  from './filter-headers';
+import { default as filterHeaders }  from './filter-headers';
 
-const contextProvider = ({ req })  => {
-  
-  return {
+export default ({ req })  => {
+    return {
             req,
             customHeaders: {
               headers: {
-                ...filterHeaders(req.headers, ['authorization', 'connection' ]),
+                ...filterHeaders(req.headers, ['authorization']),
                 credentials: 'same-origin',
                 'Content-Type': 'application/json',
               },
@@ -15,4 +14,3 @@ const contextProvider = ({ req })  => {
           }
 }
 
-export default contextProvider;
