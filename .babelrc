@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "graphql-tag"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": "commonjs",
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+  
+}

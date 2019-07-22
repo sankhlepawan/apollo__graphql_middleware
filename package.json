@@ -1,0 +1,25 @@
+{
+  "name": "graphql-server0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel-watch src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "0.6.0",
+    "apollo-server": "2.6.9",
+    "graphql": "14.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel-plugin-graphql-tag": "2.4.0",
+    "babel-watch": "^7.0.0",
+    "nodemon": "1.19.1"
+  }
+}
