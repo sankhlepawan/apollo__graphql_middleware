@@ -1,11 +1,12 @@
 
 export default  (headers, nameList) => {
-     
-       return nameList
-       .map(name => name.toLowerCase())
+     let hdrs =  nameList.map(name => name.toLowerCase())
        .reduce((acc, name) => ({
             ...acc,
             [name]: headers[name]
-        }),{})
+        }),{});
+     // console.log(hdrs);
+     return hdrs;
+        
 }
 
